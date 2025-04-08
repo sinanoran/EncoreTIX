@@ -1,4 +1,5 @@
-﻿# EncoreTIX
+
+ # EncoreTIX
 
 EncoreTIX is an ASP.NET Core MVC web application that integrates with the Ticketmaster Discovery API to allow users to search for attractions (e.g., bands, artists, sports teams), view details, and explore related events.
 
