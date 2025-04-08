@@ -1,0 +1,39 @@
+@model List<AttractionViewModel>
+@{
+    ViewData["Title"] = "Attraction Search";
+}
+
+<div class="search-section container my-5">
+    <h1 class="text-center mb-4">Search for Attractions</h1>
+    <form method="get" class="d-flex justify-content-center mb-5">
+        <input type="text" name="query" class="form-control rounded-pill px-4" placeholder="Search e.g. Phish" style="max-width: 400px;" value="@ViewData["Query"]" />
+        <button type="submit" class="btn btn-primary rounded-pill ms-3 px-4">Submit</button>
+    </form>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center">
+            <img src="/images/sad-face.png" alt="No results" style="width:100px;" />
+            <h2 class="mt-3">No Results Found</h2>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="card h-100 shadow-sm w-100 d-flex flex-column">
+                        <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" />
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title">@item.Name</h5>
+                            <div class="mt-auto">
+                                <a href="/Home/Details?id=@item.Id" class="btn btn-outline-primary rounded-pill">Select</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

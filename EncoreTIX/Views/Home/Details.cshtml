@@ -1,0 +1,51 @@
+﻿@model EncoreTIX.Models.AttractionDetailsViewModel
+@{
+    ViewData["Title"] = "Attraction Details";
+}
+
+<div class="container my-5 text-center">
+    <h1>@Model.Name</h1>
+    <div class="mb-4">
+        <img src="@Model.ImageUrl" class="img-fluid" style="max-height:300px;" />
+    </div>
+
+    <div class="mb-4">
+        @foreach (var link in Model.ExternalLinks)
+        {
+            <a href="@link.Value" class="btn btn-sm btn-outline-secondary rounded-pill mx-1" target="_blank">@link.Key</a>
+        }
+    </div>
+
+    <h3>Upcoming Events</h3>
+    @if (Model.Events.Any())
+    {
+        <div class="event-list">
+            @foreach (var ev in Model.Events)
+            {
+                <div class="event-item d-flex border-bottom py-3 align-items-start">
+                    <p class="hidden">@ev.Id</p>
+                    @if (ev.ImageUrl is not null)
+                    {
+                        <img src="@ev.ImageUrl" alt="@ev.Name" class="me-3 rounded" style="width:80px; height:80px; object-fit:cover;" />
+                    }
+                    <div>
+                        <div class="text-uppercase text-muted" style="font-size: 0.85rem;">
+                            @ev.Date
+                        </div>
+                        <div class="fw-bold text-dark" style="font-size: 1.1rem;">
+                            @ev.Name
+                        </div>
+                        <div class="text-secondary" style="font-size: 0.95rem;">
+                            @ev.Venue
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">No upcoming events found.</p>
+    }
+</div>
+

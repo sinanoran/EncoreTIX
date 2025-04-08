@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EDF5F9;
+    margin: 0;
+    padding: 0;
+    color: #182F40;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #182F40;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.navbar {
+    background-color: #182F40;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+form {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+input[type="text"] {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+button {
+    background-color: #186CA8;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #5DBDF0;
+    }
+
+/* Result card style */
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-title {
+    color: #182F40;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Event List Layout */
+.event-list {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 0.5rem;
+    width: 600px;
+    display: inline-block;
+}
+
+.event-item {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding: 0.75rem 0;
+}
+
+    .event-item:last-child {
+        border-bottom: none;
+    }
+
+    .event-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .event-item .text-uppercase {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+
+    .event-item .fw-bold {
+        font-size: 1.1rem;
+        color: #182F40;
+    }
+
+    .event-item .text-secondary {
+        font-size: 0.95rem;
+        color: #6c757d;
+    }
